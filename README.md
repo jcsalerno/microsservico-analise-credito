@@ -40,10 +40,10 @@ Se a pontuação acumulada for maior que 350 pontos, a proposta é aprovada. Cas
 
 ```json
 {
-  "nome": "Nami",
-  "sobrenome": "Cesar",
+  "nome": "Luffy",
+  "sobrenome": "D",
   "telefone": "(55) 99175-9423",
-  "cpf": "148.899.747-01",
+  "cpf": "148.0555.0101-01",
   "renda": 1000.00,
   "valorSolicitado": 5000.00,
   "prazoPagamento": 12
