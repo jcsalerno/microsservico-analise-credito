@@ -1,5 +1,7 @@
 # Microsserviço de Análise de Crédito
 
+![img.png](img.png)
+
 Este projeto é o **terceiro microsserviço** de um sistema de análise de crédito distribuído com arquitetura orientada a mensagens utilizando RabbitMQ.
 
 Ele é responsável por **avaliar propostas de crédito**, atribuindo pontuação com base em regras de negócio, e decidir se a proposta será aprovada ou não. Em seguida, ele envia a resposta para o microsserviço de notificação.
