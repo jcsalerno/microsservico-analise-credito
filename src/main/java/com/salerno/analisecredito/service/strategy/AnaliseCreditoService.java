@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+
 @Service
 public class AnaliseCreditoService {
 
@@ -19,14 +20,13 @@ public class AnaliseCreditoService {
     private String exchangePropostaConcluida;
 
     public void analisar(Proposta proposta) {
-
-        try {
-            int pontos = calculoPontoList.stream().mapToInt(impl -> impl.calcular(proposta)).sum();
-            proposta.setAprovada(pontos > 350);
-        } catch (StrategyException ex) {
-            proposta.setAprovada(false);
-            proposta.setObservacao(ex.getMessage());
+            try {
+                int pontos = calculoPontoList.stream().mapToInt(impl -> impl.calcular(proposta)).sum();
+                proposta.setAprovada(pontos > 350);
+            } catch (StrategyException ex) {
+                proposta.setAprovada(false);
+                proposta.setObservacao(ex.getMessage());
+            }
+           notificacaoRabbitMQService.notificar(exchangePropostaConcluida, proposta);
         }
-        notificacaoRabbitMQService.notificar(exchangePropostaConcluida, proposta);
     }
-}

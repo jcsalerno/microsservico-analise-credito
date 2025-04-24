@@ -9,9 +9,9 @@ public class Proposta {
 
         private int prazoPagamento;
 
-        private Boolean aprovada = false;
+        private Boolean aprovada;
 
-        private boolean integrada = false;
+        private boolean integrada;
 
         private String observacao;
 
